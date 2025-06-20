@@ -11,6 +11,4 @@ COPY . .
 RUN python -m pip install ".[cpu,cli]"
 RUN rembg d u2net
 
-EXPOSE 7000
-ENTRYPOINT ["rembg"]
-CMD ["--help"]
+CMD ["sh", "-c", "rembg s -h 0.0.0.0 -p $PORT"]
